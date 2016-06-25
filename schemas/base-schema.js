@@ -16,8 +16,7 @@ module.exports = {
     }
   },
   'required': [
-    'name',
-    'type',
+    // TODO: should name and type be required?
     'properties'
   ]
 };

@@ -11,13 +11,19 @@ var defaultSchemas = {
 function ComponentValidator(options) {
   options = _.extend({}, options);
   this.ajv = new Ajv();
-  _.each(defaultSchemas, (schema, schemaName) => this.ajv.addSchema(schema, schemaName));
-  this.schemaNames = Object.keys(defaultSchemas);
+  this.schemaNames = [];
+  _.each(defaultSchemas, (schema, schemaName) => this.addSchema(schema, schemaName));
   if(options.schemas) {
-    _.each(options.schemas, (schema, schemaName) => this.ajv.addSchema(schema, schemaName));
-    this.schemaNames = this.schemaNames.concat(Object.keys(options.schemas));
+    _.each(options.schemas, (schema, schemaName) => this.addSchema(schema, schemaName));
   }
 }
+
+ComponentValidator.prototype.addSchema = function(schema, schemaName) {
+  if (this.schemaNames.indexOf(schemaName) === -1) {
+    this.ajv.addSchema(schema, schemaName);
+    this.schemaNames.push(schemaName);
+  }
+};
 
 ComponentValidator.prototype.validateComponents = function(components) {
   _.each(components, (component) => this.validate(component));
