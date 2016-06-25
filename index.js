@@ -26,7 +26,7 @@ ComponentValidator.prototype.addSchema = function(schema, schemaName) {
 };
 
 ComponentValidator.prototype.validateComponents = function(components) {
-  _.each(components, (component) => this.validate(component));
+  _.each(components, (component) => this.validateComponent(component));
   return true;
 };
 
