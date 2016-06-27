@@ -1,12 +1,16 @@
 {
-  "name": "nitro-pattern-validator",
+  "name": "nitro-component-validator",
   "version": "0.0.1",
   "description": "A helper to validate a pattern",
   "main": "index.js",
-  "files": ["index.js", "schemas"],
+  "files": [
+    "index.js",
+    "schemas"
+  ],
   "scripts": {
     "test": "ava -v",
     "posttest": "npm-run-all posttest:*",
+    "posttest:lint": "eslint .",
     "posttest:coverage": "nyc ava",
     "posttest:coverage-report": "nyc report --reporter=html",
     "posttest:coverage-check": "nyc check-coverage --lines 100 --functions 100 --branches 100"
@@ -29,8 +33,11 @@
     "lodash": "^4.13.1"
   },
   "devDependencies": {
+    "@namics/eslint-config": "git://github.com/namics/eslint-config-namics.git#develop",
     "ava": "^0.15.2",
+    "babel-eslint": "^6.1.0",
     "coveralls": "^2.11.9",
+    "eslint": "^2.13.1",
     "ncp": "^2.0.0",
     "npm-run-all": "^2.2.2",
     "nyc": "^6.6.1"
