@@ -1,4 +1,5 @@
 # Nitro Pattern Validator
+[![Coverage Status](https://coveralls.io/repos/github/namics/nitro-component-validator/badge.svg?branch=master)](https://coveralls.io/github/namics/nitro-component-validator?branch=master)
 
 This helper verifies that the pattern.json file of a pattern is valid
 
