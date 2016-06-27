@@ -1,4 +1,6 @@
 # Nitro Pattern Validator
+
+[![Build Status](https://travis-ci.org/namics/nitro-component-validator.svg?branch=master)](https://travis-ci.org/namics/nitro-component-validator)
 [![Coverage Status](https://coveralls.io/repos/github/namics/nitro-component-validator/badge.svg?branch=master)](https://coveralls.io/github/namics/nitro-component-validator?branch=master)
 [![Codestyle](https://img.shields.io/badge/codestyle-namics-green.svg)](https://github.com/namics/eslint-config-namics)
 
