@@ -1,5 +1,6 @@
 module.exports = {
   '$schema': 'http://json-schema.org/draft-04/schema#',
+  'id': 'nitro-validator-base',
   'type': 'object',
   'properties': {
     'name': {

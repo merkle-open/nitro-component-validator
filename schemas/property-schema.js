@@ -1,5 +1,6 @@
-var propertySchema = require('ajv/lib/refs/json-schema-draft-04.json');
-propertySchema.id = 'json-schema-draft-04-properties';
+var _ = require('lodash');
+var propertySchema = _.cloneDeep(require('ajv/lib/refs/json-schema-draft-04.json'));
+propertySchema.id = 'nitro-validator-properties';
 // Extract property schema from json schema
 Object.keys(propertySchema.properties)
   .filter((property) => property !== 'properties')

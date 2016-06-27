@@ -11,17 +11,21 @@ var defaultSchemas = {
 function ComponentValidator(options) {
   options = _.extend({}, options);
   this.ajv = new Ajv();
-  this.schemaNames = [];
-  _.each(defaultSchemas, (schema, schemaName) => this.addSchema(schema, schemaName));
+  this.schemaIds = [];
+  _.each(defaultSchemas, (schema) => this.addSchema(schema));
   if(options.schemas) {
-    _.each(options.schemas, (schema, schemaName) => this.addSchema(schema, schemaName));
+    _.each(options.schemas, (schema) => this.addSchema(schema));
   }
 }
 
-ComponentValidator.prototype.addSchema = function(schema, schemaName) {
-  if (this.schemaNames.indexOf(schemaName) === -1) {
-    this.ajv.addSchema(schema, schemaName);
-    this.schemaNames.push(schemaName);
+ComponentValidator.prototype.addSchema = function(schema) {
+  var schemaId = schema.id;
+  if (!schemaId) {
+    throw new Error('Schema id is required');
+  }
+  if (this.schemaIds.indexOf(schemaId) === -1) {
+    this.ajv.addSchema(schema, schemaId);
+    this.schemaIds.push(schemaId);
   }
 };
 
@@ -31,7 +35,7 @@ ComponentValidator.prototype.validateComponents = function(components) {
 };
 
 ComponentValidator.prototype.validateComponent = function(component) {
-  this.schemaNames.forEach((schemaName) => {
+  this.schemaIds.forEach((schemaName) => {
     var isValid = this.ajv.validate(schemaName, component.data);
     if (!isValid) {
       throw new Error('Schema "' + schemaName + '" can\'t be applied for "' + component.metaFile + '" because ' + this.ajv.errorsText());

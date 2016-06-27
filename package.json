@@ -5,7 +5,11 @@
   "main": "index.js",
   "files": ["index.js", "schemas"],
   "scripts": {
-    "test": "ava -v"
+    "test": "ava -v",
+    "posttest": "npm-run-all posttest:*",
+    "posttest:coverage": "nyc ava",
+    "posttest:coverage-report": "nyc report --reporter=html",
+    "posttest:coverage-check": "nyc check-coverage --lines 100 --functions 100 --branches 100"
   },
   "repository": {
     "type": "git",
@@ -23,5 +27,12 @@
   "dependencies": {
     "ajv": "^4.1.3",
     "lodash": "^4.13.1"
+  },
+  "devDependencies": {
+    "ava": "^0.15.2",
+    "coveralls": "^2.11.9",
+    "ncp": "^2.0.0",
+    "npm-run-all": "^2.2.2",
+    "nyc": "^6.6.1"
   }
 }
