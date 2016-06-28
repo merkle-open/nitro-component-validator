@@ -31,7 +31,7 @@ test('should not throw if component is valid', async t => {
 		validator.validateComponent({
 			metaFile: 'components/atoms/button/pattern.json',
 			data: {
-				name: 'button',
+				title: 'button',
 				stability: 'alpha',
 				type: 'atom',
 				properties: {}
@@ -48,7 +48,7 @@ test('should throw if component is invalid', async t => {
 		validator.validateComponent({
 			metaFile: 'components/atoms/button/pattern.json',
 			data: {
-				name: 'button',
+				title: 'button',
 				stability: 'alpha',
 				type: 'atom'
 			}
@@ -75,7 +75,7 @@ test('should throw if component does not match a custom schema', async t => {
 		validator.validateComponent({
 			metaFile: 'components/atoms/button/pattern.json',
 			data: {
-				name: 'button',
+				title: 'button',
 				stability: 'alpha',
 				type: 'atom',
 				properties: {},
@@ -93,7 +93,7 @@ test('should not throw if validating multiple components and all are valid', asy
 		validator.validateComponents([{
 			metaFile: 'components/atoms/button/pattern.json',
 			data: {
-				name: 'button',
+				title: 'button',
 				stability: 'alpha',
 				type: 'atom',
 				properties: {}
@@ -101,7 +101,7 @@ test('should not throw if validating multiple components and all are valid', asy
 		}, {
 			metaFile: 'components/atoms/radio/pattern.json',
 			data: {
-				name: 'radio',
+				title: 'radio',
 				stability: 'alpha',
 				type: 'atom',
 				properties: {}
@@ -119,7 +119,7 @@ test('should throw when validating multiple components and one is invalid', asyn
 			valid: {
 				metaFile: 'components/atoms/radio/pattern.json',
 				data: {
-					name: 'radio',
+					title: 'radio',
 					stability: 'alpha',
 					type: 'atom',
 					properties: {}
@@ -128,7 +128,7 @@ test('should throw when validating multiple components and one is invalid', asyn
 			invalid: {
 				metaFile: 'components/atoms/button/pattern.json',
 				data: {
-					name: 'button',
+					title: 'button',
 					type: 'atom'
 				}
 			}
@@ -145,7 +145,7 @@ test('should not throw if a schema is added twice', async t => {
 		validator.validateComponent({
 			metaFile: 'components/atoms/button/pattern.json',
 			data: {
-				name: 'button',
+				title: 'button',
 				stability: 'alpha',
 				type: 'atom',
 				properties: {}
