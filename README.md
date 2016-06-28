@@ -9,12 +9,13 @@ This helper verifies that the pattern.json file of a component is valid
 ## Installation
 
 ```bash
-npm i --save-dev nitro-pattern-validator
+npm i --save-dev @namics/nitro-component-validator
 ```
 
 ## Usage
 
 ```js
+const ComponentValidator = require('@namics/nitro-component-validator');
 var validator = new PatternValidator();
 try {
     validator.validateComponent({
