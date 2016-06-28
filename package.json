@@ -1,7 +1,7 @@
 {
-  "name": "nitro-component-validator",
+  "name": "@namics/nitro-component-validator",
   "version": "0.0.1",
-  "description": "A helper to validate a pattern",
+  "description": "A helper to validate a nitro component",
   "main": "index.js",
   "files": [
     "index.js",
