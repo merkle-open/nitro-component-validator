@@ -8,6 +8,9 @@ module.exports = {
 		name: {
 			type: 'string'
 		},
+		title: {
+			type: 'string'
+		},
 		stability: {
 			type: 'string'
 		},
@@ -19,7 +22,7 @@ module.exports = {
 		}
 	},
 	required: [
-		// TODO: should name and type be required?
+		'title',
 		'properties'
 	]
 };

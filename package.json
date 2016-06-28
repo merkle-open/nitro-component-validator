@@ -1,6 +1,6 @@
 {
   "name": "@namics/nitro-component-validator",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A helper to validate a nitro component",
   "main": "index.js",
   "files": [
