@@ -41,7 +41,6 @@
     "coveralls": "^2.11.12",
     "denodeify": "^1.2.1",
     "eslint": "^3.3.0",
-    "eslint-plugin-import": "^1.13.0",
     "ncp": "^2.0.0",
     "npm-run-all": "^2.3.0",
     "nyc": "^8.1.0"
