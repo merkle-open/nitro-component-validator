@@ -1,15 +1,16 @@
-/* eslint max-len: off, quotes:off */
+/* eslint-disable id-blacklist, max-len, quotes, arrow-parens */
+
 import test from 'ava';
 import PatternValidator from '..';
 import baseSchema from '../schemas/base-schema.js';
 
 /**
- * @param {function} callback Callback
+ * @param {function} cb Callback
  * @returns {string} Error message
  */
-function getErrorMessage(callback) {
+function getErrorMessage(cb) {
 	try {
-		callback();
+		cb();
 	} catch (e) {
 		return e.message;
 	}

@@ -1,6 +1,6 @@
 {
   "name": "@namics/nitro-component-validator",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A helper to validate a nitro component",
   "main": "index.js",
   "files": [
@@ -31,19 +31,19 @@
   },
   "homepage": "https://github.com/namics/nitro-component-validator#readme",
   "dependencies": {
-    "ajv": "^4.1.4",
-    "lodash": "^4.13.1"
+    "ajv": "^4.4.1",
+    "lodash": "^4.15.0"
   },
   "devDependencies": {
-    "@namics/eslint-config": "^0.1.0",
-    "ava": "^0.15.2",
-    "babel-eslint": "^6.1.0",
-    "coveralls": "^2.11.9",
+    "@namics/eslint-config": "^1.0.0",
+    "ava": "^0.16.0",
+    "babel-eslint": "^6.1.2",
+    "coveralls": "^2.11.12",
     "denodeify": "^1.2.1",
-    "eslint": "^2.13.1",
-    "eslint-plugin-import": "^1.9.2",
+    "eslint": "^3.3.0",
+    "eslint-plugin-import": "^1.13.0",
     "ncp": "^2.0.0",
     "npm-run-all": "^2.3.0",
-    "nyc": "^6.6.1"
+    "nyc": "^8.1.0"
   }
 }

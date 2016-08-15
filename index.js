@@ -1,4 +1,7 @@
 'use strict';
+
+/* eslint-disable require-jsdoc */
+
 const _ = require('lodash');
 const Ajv = require('ajv');
 // The json schemas
