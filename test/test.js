@@ -35,7 +35,11 @@ test('should not throw if component is valid', async t => {
 				title: 'button',
 				stability: 'alpha',
 				type: 'atom',
-				properties: {}
+				properties: {
+					active: {
+						type: 'boolean'
+					}
+				}
 			}
 		});
 	});
@@ -154,5 +158,26 @@ test('should not throw if a schema is added twice', async t => {
 		});
 	});
 	t.is(err, undefined);
+	t.pass();
+});
+
+test('should throw if properties are written in camel case', async t => {
+	const validator = new PatternValidator();
+	const err = getErrorMessage(() => {
+		validator.validateComponent({
+			metaFile: 'components/atoms/button/pattern.json',
+			data: {
+				title: 'button',
+				stability: 'alpha',
+				type: 'atom',
+				properties: {
+					camelCase: {
+						type: 'boolean'
+					}
+				}
+			}
+		});
+	});
+	t.is(err, `Schema "components/atoms/button/pattern.json" property "camelCase" contains invalid characters. Please use kebab case.`);
 	t.pass();
 });
