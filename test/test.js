@@ -37,10 +37,10 @@ test('should not throw if component is valid', async t => {
 				type: 'atom',
 				properties: {
 					active: {
-						type: 'boolean'
-					}
-				}
-			}
+						type: 'boolean',
+					},
+				},
+			},
 		});
 	});
 	t.is(err, undefined);
@@ -55,8 +55,8 @@ test('should throw if component is invalid', async t => {
 			data: {
 				title: 'button',
 				stability: 'alpha',
-				type: 'atom'
-			}
+				type: 'atom',
+			},
 		});
 	});
 	t.is(err, `Schema "nitro-validator-base" can't be applied for "components/atoms/button/pattern.json" because data should have required property 'properties'`);
@@ -70,11 +70,11 @@ test('should throw if component does not match a custom schema', async t => {
 				id: 'customSchema',
 				properties: {
 					color: {
-						enum: ['red', 'blue']
-					}
-				}
-			}
-		}
+						enum: ['red', 'blue'],
+					},
+				},
+			},
+		},
 	});
 	const err = getErrorMessage(() => {
 		validator.validateComponent({
@@ -84,8 +84,8 @@ test('should throw if component does not match a custom schema', async t => {
 				stability: 'alpha',
 				type: 'atom',
 				properties: {},
-				color: 'green'
-			}
+				color: 'green',
+			},
 		});
 	});
 	t.is(err, `Schema "customSchema" can't be applied for "components/atoms/button/pattern.json" because data.color should be equal to one of the allowed values`);
@@ -101,16 +101,16 @@ test('should not throw if validating multiple components and all are valid', asy
 				title: 'button',
 				stability: 'alpha',
 				type: 'atom',
-				properties: {}
-			}
+				properties: {},
+			},
 		}, {
 			metaFile: 'components/atoms/radio/pattern.json',
 			data: {
 				title: 'radio',
 				stability: 'alpha',
 				type: 'atom',
-				properties: {}
-			}
+				properties: {},
+			},
 		}]);
 	});
 	t.is(err, undefined);
@@ -127,16 +127,16 @@ test('should throw when validating multiple components and one is invalid', asyn
 					title: 'radio',
 					stability: 'alpha',
 					type: 'atom',
-					properties: {}
-				}
+					properties: {},
+				},
 			},
 			invalid: {
 				metaFile: 'components/atoms/button/pattern.json',
 				data: {
 					title: 'button',
-					type: 'atom'
-				}
-			}
+					type: 'atom',
+				},
+			},
 		});
 	});
 	t.is(err, `Schema "nitro-validator-base" can't be applied for "components/atoms/button/pattern.json" because data should have required property 'properties'`);
@@ -153,8 +153,8 @@ test('should not throw if a schema is added twice', async t => {
 				title: 'button',
 				stability: 'alpha',
 				type: 'atom',
-				properties: {}
-			}
+				properties: {},
+			},
 		});
 	});
 	t.is(err, undefined);
@@ -172,10 +172,10 @@ test('should throw if properties are written in camel case', async t => {
 				type: 'atom',
 				properties: {
 					camelCase: {
-						type: 'boolean'
-					}
-				}
-			}
+						type: 'boolean',
+					},
+				},
+			},
 		});
 	});
 	t.is(err, `Schema "components/atoms/button/pattern.json" property "camelCase" contains invalid characters. Please use kebab case.`);

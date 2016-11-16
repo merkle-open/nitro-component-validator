@@ -6,23 +6,23 @@ module.exports = {
 	type: 'object',
 	properties: {
 		name: {
-			type: 'string'
+			type: 'string',
 		},
 		title: {
-			type: 'string'
+			type: 'string',
 		},
 		stability: {
-			type: 'string'
+			type: 'string',
 		},
 		type: {
-			type: 'string'
+			type: 'string',
 		},
 		properties: {
-			type: 'object'
-		}
+			type: 'object',
+		},
 	},
 	required: [
 		'title',
-		'properties'
-	]
+		'properties',
+	],
 };

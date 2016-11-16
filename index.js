@@ -65,7 +65,7 @@ class ComponentValidator {
 				);
 			}
 			Object.keys(component.data.properties).forEach((propertyName) => {
-				if (!/^[a-z][a-z\-0-9]*$/.test(propertyName)) {
+				if (!(/^[a-z][a-z\-0-9]*$/).test(propertyName)) {
 					throw new Error(
 						`Schema "${component.metaFile}" property "${propertyName}" contains invalid characters. ` +
 						'Please use kebab case.'
